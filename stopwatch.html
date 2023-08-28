@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="stopwatch.js"></script>
+
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(181, 148, 211);
+        }
+      button {
+        font-size: 46px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(101, 2, 124);
+        padding: 2%;
+        color: aliceblue;
+      }
+      h1 {
+        font-size: 46px;
+        display: inline-block;
+      }
+      div {
+        text-align: center;
+      }
+
+      #card {
+        padding-top: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <div>
+        <button onclick="start()">Start</button>
+      </div>
+      <div>
+        <h1 id="hour"></h1>
+        <h1>:</h1>
+        <h1 id="mint"></h1>
+        <h1>:</h1>
+        <h1 id="sec"></h1>
+        <h1>:</h1>
+        <h1 id="mili"></h1>
+        <button onclick="reset()">Reset</button>
+      </div>
+      <div>
+        <button onclick="stop()">Stop</button>
+      </div>
+    </div>
+  </body>
+</html>
