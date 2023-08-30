@@ -2,34 +2,38 @@ let hour = 0;
 let mint = 0;
 let sec = 0;
 let mili = 0;
-
+let started= false;
 let myInterval;
 function start() {
-    
-  myInterval = setInterval(function () {
-    mili += 1;
-    if (mili === 10) {
-      sec += 1;
-      mili = 0;
-    }
-    if (sec === 60) {
-      mint += 1;
-      sec = 0;
-    }
-    if (mint === 60) {
-      hour += 1;
-      mint = 0;
-    }
+  if (started === false) {
+    myInterval = setInterval(function () {
+      mili += 1;
+      if (mili === 10) {
+        sec += 1;
+        mili = 0;
+      }
+      if (sec === 60) {
+        mint += 1;
+        sec = 0;
+      }
+      if (mint === 60) {
+        hour += 1;
+        mint = 0;
+      }
 
-    document.getElementById("hour").innerHTML = hour;
-    document.getElementById("mint").innerHTML = mint;
-    document.getElementById("sec").innerHTML = sec;
-    document.getElementById("mili").innerHTML = mili;
-  }, 100);
+      document.getElementById("hour").innerHTML = hour;
+      document.getElementById("mint").innerHTML = mint;
+      document.getElementById("sec").innerHTML = sec;
+      document.getElementById("mili").innerHTML = mili;
+    }, 100);
+    started=true;
+  }
+
 }
 
 function stop() {
   clearInterval(myInterval);
+  started=false;
 }
 
 function reset() {
